@@ -8,7 +8,7 @@ const Lights = () => {
     const [list , setList] = useState(null);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/lights')
+        fetch( window.ServerIp + '/lights')
         .then((res) => {return res.json()})
         .then((data:any) => {setList(data)})
     },[])
