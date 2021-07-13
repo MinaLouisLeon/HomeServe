@@ -1,18 +1,17 @@
 import { IonLabel } from "@ionic/react"
 import { useHistory } from "react-router"
 import './LightsList.css'
-const LightsList = (props:any) => {
+const SubLightsList = (props:any) => {
     
-    const history = useHistory();
 
     return(<>
         <div className="main-light-list-style ">
             <br></br>
             {props.list.map((listItem:any) => {
                 return(<>
-                    <button className="btn-grad"  onClick={() => {history.push('/sublights/'+listItem.light_item)}}>
+                    <button className="btn-grad">
                         <IonLabel>
-                            {listItem.light_item}
+                            {listItem.sub_light_item}
                         </IonLabel>
                     </button>
                 </>)
@@ -20,4 +19,4 @@ const LightsList = (props:any) => {
         </div>
     </>)
 }
-export default LightsList;
+export default SubLightsList;
