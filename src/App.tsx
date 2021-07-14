@@ -10,10 +10,11 @@ import {
 } from '@ionic/react';
 import './App.css'
 import { IonReactRouter } from '@ionic/react-router';
-import { bulb, home } from 'ionicons/icons';
+import { bulb, home ,settings} from 'ionicons/icons';
 import Home from './pages/Home';
 import SubLights from './pages/SubLights';
 import Lights from './pages/Lights';
+import Settings from './pages/Settings';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -43,14 +44,17 @@ const App: React.FC = () => (
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/lights">
-            <Lights />
-          </Route>
-          <Route exact path="/sublights/:item">
-            <SubLights />
-          </Route>
           <Route exact path="/">
             <Redirect to="/home" />
+          </Route>
+          <Route exact path="/lights/:value">
+            <Lights />
+          </Route>
+          <Route exact path="/sublights/:item/:value">
+            <SubLights />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
           </Route>
         </IonRouterOutlet>
         <IonTabBar  slot="bottom">
@@ -58,9 +62,13 @@ const App: React.FC = () => (
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel> 
           </IonTabButton>
-          <IonTabButton tab="Lights" href="/lights">
+          <IonTabButton tab="Lights" href="/lights/show">
             <IonIcon icon={bulb} />
             <IonLabel>Lights</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Settings" href="/settings">
+            <IonIcon icon={settings} />
+            <IonLabel>Settings</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
