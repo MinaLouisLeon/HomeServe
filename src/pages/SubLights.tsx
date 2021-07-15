@@ -9,7 +9,6 @@ const SubLights = () => {
     const {item} = useParams<{item?: string}>();
     const {value} = useParams<{value?: string}>();
     const [subLightList , setSubLightList] = useState(null);
-    const history = useHistory();
 
     useEffect(()=>{
         console.log("useEffect")
@@ -29,7 +28,7 @@ const SubLights = () => {
         <IonPage>
             <HeaderComp title={item} btnValue="back" urlLocation={"/lights/" + value}/>
             <IonContent fullscreen >
-                {subLightList && <SubLightsList list={subLightList} value={value}/>}
+                {subLightList && <SubLightsList list={subLightList} value={value} setSubLightList={setSubLightList}/>}
             </IonContent>
         </IonPage>
     </>)
