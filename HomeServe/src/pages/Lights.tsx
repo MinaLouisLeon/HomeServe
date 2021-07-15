@@ -18,7 +18,7 @@ const Lights = () => {
       .then((res) => {return res.json()})
       .then((data:any) => {setList(data);console.log(data)})
       .catch((error) => {console.log(error)})
-  },[])
+  },[history.location.pathname])
 
     return(<>
     <IonPage>

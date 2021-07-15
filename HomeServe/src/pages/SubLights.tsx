@@ -14,6 +14,7 @@ const SubLights = () => {
     useEffect(()=>{
         console.log("useEffect")
         const light_item_obj = {item}
+        setSubLightList(null);
         fetch(window.ServerIp + '/sublights',{
             method: "POST", 
             headers: {"Content-Type":"application/json"},
@@ -21,7 +22,7 @@ const SubLights = () => {
         }).then((res) => {return res.json()})
         .then((data:any) => {setSubLightList(data);console.log(data)})
         .catch((err) => console.log(err))
-    },[history.location.pathname])
+    },[item])
 
 
     return(<>

@@ -8,8 +8,8 @@ import 'tachyons';
 declare global {
   interface Window { ServerIp : string}
 }
-window.ServerIp = 'https://my-home-serve-server.herokuapp.com'
-// window.ServerIp = 'http://localhost:3000'
+// window.ServerIp = 'https://my-home-serve-server.herokuapp.com'
+window.ServerIp = 'http://localhost:3000'
 ReactDOM.render(
   <React.StrictMode>
     <App />
