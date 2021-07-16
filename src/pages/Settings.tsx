@@ -13,7 +13,7 @@ const Settings = () => {
             <IonContent fullscreen>
                 <div className="settings-style">
                     <br></br>
-                <button className="btn-grad-settings" onClick={() => {history.push('/lights/settings')}}>
+                <button className="btn-grad-settings" onClick={() => {history.push('/')}}>
                     <IonLabel>
                         Lights
                     </IonLabel>

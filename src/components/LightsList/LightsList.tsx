@@ -5,27 +5,10 @@ const LightsList = (props:any) => {
     //props list & value
     const history = useHistory();
 
-    const handleSettings = (item:String,enable:boolean) => {
-        if(props.value === "show"){
-            return(<>
-                {handleCheckEnable(item,enable)}
-            </>)
-        }
-        else if (props.value === "settings"){
-            return(<>
-                <button className="btn-grad"  onClick={() => {history.push('/sublights/' + item + "/settings")}}>
-                    <IonLabel>
-                        {item}
-                    </IonLabel>
-                </button>
-            </>)
-        }
-    }
-
     const handleCheckEnable = (item:String,enable:boolean) => {
         if(enable === true){
             return(<>
-                <button className="btn-grad"  onClick={() => {history.push('/sublights/' + item + '/show')}}>
+                <button className="btn-grad"  onClick={() => {history.push('/sublights/' + item )}}>
                     <IonLabel>
                         {item}
                     </IonLabel>
@@ -39,7 +22,7 @@ const LightsList = (props:any) => {
             <br></br>
             {props.list.map((listItem:any) => {
                 return(<>
-                    {handleSettings(listItem.light_item,listItem.enable)}
+                    {handleCheckEnable(listItem.light_item,listItem.enable)}
                 </>)
             })}
         </div>

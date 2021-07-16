@@ -47,10 +47,10 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
-          <Route exact path="/lights/:value">
+          <Route exact path="/lights">
             <Lights />
           </Route>
-          <Route exact path="/sublights/:item/:value">
+          <Route exact path="/sublights/:item/">
             <SubLights />
           </Route>
           <Route exact path="/settings">
@@ -62,7 +62,7 @@ const App: React.FC = () => (
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel> 
           </IonTabButton>
-          <IonTabButton tab="Lights" href="/lights/show">
+          <IonTabButton tab="Lights" href="/lights">
             <IonIcon icon={bulb} />
             <IonLabel>Lights</IonLabel>
           </IonTabButton>

@@ -7,8 +7,8 @@ import '../App.css'
 const SubLights = () => {
 
     const {item} = useParams<{item?: string}>();
-    const {value} = useParams<{value?: string}>();
     const [subLightList , setSubLightList] = useState(null);
+    const history = useHistory();
 
     useEffect(()=>{
         console.log("useEffect")
@@ -21,14 +21,14 @@ const SubLights = () => {
         }).then((res) => {return res.json()})
         .then((data:any) => {setSubLightList(data);console.log(data)})
         .catch((err) => console.log(err))
-    },[item])
+    },[history.location.pathname])
 
 
     return(<>
         <IonPage>
-            <HeaderComp title={item} btnValue="back" urlLocation={"/lights/" + value}/>
+            <HeaderComp title={item} btnValue="back" urlLocation={"/lights"}/>
             <IonContent fullscreen >
-                {subLightList && <SubLightsList list={subLightList} value={value} setSubLightList={setSubLightList}/>}
+                {subLightList && <SubLightsList list={subLightList} setSubLightList={setSubLightList}/>}
             </IonContent>
         </IonPage>
     </>)
