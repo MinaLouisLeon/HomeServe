@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
   IonIcon,
@@ -7,36 +7,34 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-} from '@ionic/react';
-import './App.css'
-import { IonReactRouter } from '@ionic/react-router';
-import { bulb, home ,settings,film} from 'ionicons/icons';
-import Home from './pages/Home';
-import SubLights from './pages/SubLights';
-import Lights from './pages/Lights';
-import Settings from './pages/Settings';
-import MediaServer from './pages/MediaServer';
-
+} from "@ionic/react";
+import "./App.css";
+import { IonReactRouter } from "@ionic/react-router";
+import { bulb, home, settings, film } from "ionicons/icons";
+import Home from "./pages/Home";
+import SubLights from "./pages/SubLights";
+import Lights from "./pages/Lights";
+import Settings from "./pages/Settings";
+import MediaServer from "./pages/MediaServer";
 
 /* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+import "@ionic/react/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
-import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+import "@ionic/react/css/normalize.css";
+import "@ionic/react/css/structure.css";
+import "@ionic/react/css/typography.css";
 
 /* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
-import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
-import '@ionic/react/css/text-transformation.css';
-import '@ionic/react/css/flex-utils.css';
-import '@ionic/react/css/display.css';
+import "@ionic/react/css/padding.css";
+import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/text-alignment.css";
+import "@ionic/react/css/text-transformation.css";
+import "@ionic/react/css/flex-utils.css";
+import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import './theme/variables.css';
-
+import "./theme/variables.css";
 
 const App: React.FC = () => (
   <IonApp>
@@ -49,25 +47,25 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
-          <Route exact path="/lights">
+          <Route exact path="/lights/:value">
             <Lights />
           </Route>
-          <Route exact path="/sublights/:item/">
+          <Route exact path="/sublights/:item/:value">
             <SubLights />
           </Route>
           <Route exact path="/media-server">
             <MediaServer />
           </Route>
-          {/* <Route exact path="/settings">
+          <Route exact path="/settings">
             <Settings />
-          </Route> */}
+          </Route>
         </IonRouterOutlet>
-        <IonTabBar  slot="bottom">
+        <IonTabBar slot="bottom">
           <IonTabButton tab="Home" href="/home">
             <IonIcon icon={home} />
-            <IonLabel>Home</IonLabel> 
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Lights" href="/lights">
+          <IonTabButton tab="Lights" href="/lights/show">
             <IonIcon icon={bulb} />
             <IonLabel>Lights</IonLabel>
           </IonTabButton>
@@ -75,10 +73,10 @@ const App: React.FC = () => (
             <IonIcon icon={film} />
             <IonLabel>Media Server</IonLabel>
           </IonTabButton>
-          {/* <IonTabButton tab="Settings" href="/settings">
+          <IonTabButton tab="Settings" href="/settings">
             <IonIcon icon={settings} />
             <IonLabel>Settings</IonLabel>
-          </IonTabButton> */}
+          </IonTabButton>
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>

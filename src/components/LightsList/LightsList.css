@@ -1,10 +1,17 @@
-.main-light-list-style{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main-light-list-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.btn-grad {background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%)}
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #4568dc 0%,
+    #b06ab3 51%,
+    #4568dc 100%
+  );
+}
 .btn-grad {
   margin: 10px;
   padding: 15px 45px;
@@ -19,16 +26,16 @@
   width: 80%;
   justify-content: space-between;
 }
- .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: rgb(0, 0, 0);
-   text-decoration: none;
- }
-
-.iconLightsOn{
-  color : white;
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
-.iconLightsOff{
-  color : black;
+.iconLightsOn {
+  color: white;
+}
+
+.iconLightsOff {
+  color: black;
 }

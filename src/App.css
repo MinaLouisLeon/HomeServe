@@ -1,29 +1,34 @@
-
-
-ion-content{
-    --background : rgb(121 105 200);
+ion-content {
+  --background: rgb(121 105 200);
 }
 
-ion-tab-bar{
-    --background : #5260ff;
+ion-tab-bar {
+  --background: #5260ff;
 }
 
-ion-tab-button{
-    --color : black;
-    --color-selected :white;
+ion-tab-button {
+  --color: black;
+  --color-selected: white;
 }
 
-.header-txt-color{
-    color:black;
+.header-txt-color {
+  color: black;
 }
 
-.settings-style{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.settings-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.btn-grad-settings {background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%)}
+.btn-grad-settings {
+  background-image: linear-gradient(
+    to right,
+    #4568dc 0%,
+    #b06ab3 51%,
+    #4568dc 100%
+  );
+}
 .btn-grad-settings {
   margin: 10px;
   padding: 15px 45px;
@@ -38,14 +43,14 @@ ion-tab-button{
   width: 80%;
   /* justify-content: space-between; */
 }
- .btn-grad-settings:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
+.btn-grad-settings:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
 
- .media-server-view{
-    display: grid;
-    width: 100%;
-    height: 100%;
+.media-server-view {
+  display: grid;
+  width: 100%;
+  height: 100%;
 }
