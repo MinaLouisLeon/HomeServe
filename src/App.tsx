@@ -53,9 +53,9 @@ const App: React.FC = () => (
           <Route exact path="/sublights/:item/">
             <SubLights />
           </Route>
-          <Route exact path="/settings">
+          {/* <Route exact path="/settings">
             <Settings />
-          </Route>
+          </Route> */}
         </IonRouterOutlet>
         <IonTabBar  slot="bottom">
           <IonTabButton tab="Home" href="/home">
@@ -66,10 +66,10 @@ const App: React.FC = () => (
             <IonIcon icon={bulb} />
             <IonLabel>Lights</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Settings" href="/settings">
+          {/* <IonTabButton tab="Settings" href="/settings">
             <IonIcon icon={settings} />
             <IonLabel>Settings</IonLabel>
-          </IonTabButton>
+          </IonTabButton> */}
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
