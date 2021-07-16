@@ -44,3 +44,8 @@ ion-tab-button{
    text-decoration: none;
  }
 
+ .media-server-view{
+    display: grid;
+    width: 100%;
+    height: 100%;
+}

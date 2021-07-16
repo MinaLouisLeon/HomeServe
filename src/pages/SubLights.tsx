@@ -9,9 +9,10 @@ const SubLights = () => {
     const {item} = useParams<{item?: string}>();
     const [subLightList , setSubLightList] = useState(null);
     const history = useHistory();
+    const [refresh , setRefresh] = useState(0);
 
     useEffect(()=>{
-        console.log("useEffect")
+        console.log("git sub list")
         const light_item_obj = {item}
         setSubLightList(null);
         fetch(window.ServerIp + '/sublights',{
@@ -21,14 +22,14 @@ const SubLights = () => {
         }).then((res) => {return res.json()})
         .then((data:any) => {setSubLightList(data);console.log(data)})
         .catch((err) => console.log(err))
-    },[history.location.pathname])
+    },[refresh,item])
 
 
     return(<>
         <IonPage>
             <HeaderComp title={item} btnValue="back" urlLocation={"/lights"}/>
             <IonContent fullscreen >
-                {subLightList && <SubLightsList list={subLightList} setSubLightList={setSubLightList}/>}
+                {subLightList && <SubLightsList list={subLightList}  setRefresh={setRefresh} />}
             </IonContent>
         </IonPage>
     </>)

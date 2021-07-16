@@ -10,11 +10,12 @@ import {
 } from '@ionic/react';
 import './App.css'
 import { IonReactRouter } from '@ionic/react-router';
-import { bulb, home ,settings} from 'ionicons/icons';
+import { bulb, home ,settings,film} from 'ionicons/icons';
 import Home from './pages/Home';
 import SubLights from './pages/SubLights';
 import Lights from './pages/Lights';
 import Settings from './pages/Settings';
+import MediaServer from './pages/MediaServer';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -36,6 +37,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -53,6 +55,9 @@ const App: React.FC = () => (
           <Route exact path="/sublights/:item/">
             <SubLights />
           </Route>
+          <Route exact path="/media-server">
+            <MediaServer />
+          </Route>
           {/* <Route exact path="/settings">
             <Settings />
           </Route> */}
@@ -65,6 +70,10 @@ const App: React.FC = () => (
           <IonTabButton tab="Lights" href="/lights">
             <IonIcon icon={bulb} />
             <IonLabel>Lights</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="MediaServer" href="/media-server">
+            <IonIcon icon={film} />
+            <IonLabel>Media Server</IonLabel>
           </IonTabButton>
           {/* <IonTabButton tab="Settings" href="/settings">
             <IonIcon icon={settings} />
