@@ -1,11 +1,13 @@
 import { IonIcon, IonLabel } from "@ionic/react";
-import { bulb } from "ionicons/icons";
+import { bulb ,settings} from "ionicons/icons";
 import "./LightsList.css";
-import { useState } from "react";
+import { useHistory } from "react-router";
 const SubLightsList = (props: any) => {
   //props list  ==> list to be mapped
   // & setRefresh ==> returned random from server to rerender
   // & value ==> {show or setting} switch between setting and normal lightList
+
+  const history = useHistory();
 
   const ShowOrSettings = () => {
     //fn to check if to show content or show settings
@@ -33,9 +35,10 @@ const SubLightsList = (props: any) => {
           {props.list.map((listItem: any) => {
             return (
               <>
-                <button className="btn-grad">
+                <button className="btn-grad" 
+                onClick={() => {history.push("/sublights/" + listItem.light_item + "/settings/" + listItem.sub_light_item + "/" + listItem.id)}}>
                   <IonLabel>{listItem.sub_light_item}</IonLabel>
-                  <IonIcon icon={bulb} className={listItem.icon_status} />
+                  <IonIcon icon={settings} className={listItem.icon_status} />
                 </button>
               </>
             );

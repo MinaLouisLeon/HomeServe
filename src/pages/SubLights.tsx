@@ -32,8 +32,7 @@ const SubLights = () => {
   return (
     <>
       <IonPage>
-        {/* TODO fix header back link */}
-        <HeaderComp title={item} btnValue="back" urlLocation={"/lights/show"} />
+        <HeaderComp title={item} btnValue="back" urlLocation={"/lights/" + value} />
         <IonContent fullscreen>
           {subLightList && (
             <SubLightsList

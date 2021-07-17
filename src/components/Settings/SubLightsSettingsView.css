@@ -1,0 +1,23 @@
+.form-inner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+ion-item{
+    --background : rgba(255, 255, 255, 0);
+    width: 100%;
+}
+
+input{
+    width:100%;
+}

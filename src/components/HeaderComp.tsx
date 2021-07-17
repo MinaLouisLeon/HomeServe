@@ -8,7 +8,7 @@ import {
 import { useHistory } from "react-router";
 import "../App.css";
 const HeaderComp = (props: any) => {
-  // props title & btnValue & urlBackLocation
+  // props title & btnValue & urlLocation
   const history = useHistory();
   const handleButton = () => {
     if (props.btnValue === "back") {
