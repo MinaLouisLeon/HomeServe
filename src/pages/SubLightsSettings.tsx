@@ -29,7 +29,7 @@ const SubLightsSettings = () => {
             urlLocation={"/sublights/" + item + "/" + value}
             />            
             <IonContent fullscreen>
-            
+            <SubLightsSettingsView />
             </IonContent>
         </IonPage>
     </>)
