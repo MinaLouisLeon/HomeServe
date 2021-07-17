@@ -11,7 +11,8 @@ const SubLightsSettings = () => {
     const {subitem} = useParams<{subitem?: string}>();
     const {id} = useParams<{id?: string}>();
     const [settingsValues , setSettingsValues] = useState(null);
-
+    const [refresh , setRefresh] = useState(0);
+    console.log(id)
     useEffect(() => {
         const sublight_setting_obj = {id}
         fetch( window.ServerIp + "/fetch-sublight-settings",{
@@ -21,15 +22,18 @@ const SubLightsSettings = () => {
         }).then((res) => {return res.json()})
         .then((data:any) => setSettingsValues(data))
         .catch((err) => console.log(err))
-    },[])
+    },[id,refresh])
 
     return(<>
         <IonPage>
-            <HeaderComp title={subitem} btnValue="back" 
-            urlLocation={"/sublights/" + item + "/" + value}
-            />            
+            <HeaderComp title={subitem}  />            
             <IonContent fullscreen>
-            <SubLightsSettingsView />
+            {settingsValues && <SubLightsSettingsView 
+            settingsValues={settingsValues} 
+            item={item} 
+            value={value} 
+            id={id}
+            setRefresh={setRefresh}/> }
             </IonContent>
         </IonPage>
     </>)

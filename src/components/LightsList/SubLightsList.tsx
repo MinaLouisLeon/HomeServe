@@ -33,10 +33,13 @@ const SubLightsList = (props: any) => {
       return (
         <>
           {props.list.map((listItem: any) => {
+            console.log("sublist data");
+            console.log(props.list)
             return (
               <>
                 <button className="btn-grad" 
-                onClick={() => {history.push("/sublights/" + listItem.light_item + "/settings/" + listItem.sub_light_item + "/" + listItem.id)}}>
+                onClick={() => {
+                  history.push("/sublights/" + listItem.light_item + "/settings/" + listItem.sub_light_item + "/" + listItem.id)}}>
                   <IonLabel>{listItem.sub_light_item}</IonLabel>
                   <IonIcon icon={settings} className={listItem.icon_status} />
                 </button>
