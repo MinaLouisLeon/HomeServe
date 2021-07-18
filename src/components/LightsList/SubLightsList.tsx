@@ -1,11 +1,13 @@
-import { IonIcon, IonLabel } from "@ionic/react";
+import { IonIcon, IonLabel,IonItem, IonCheckbox } from "@ionic/react";
 import { bulb ,settings} from "ionicons/icons";
 import "./LightsList.css";
 import { useHistory } from "react-router";
+import HandleSubListFetch from "../Settings/HandleSubListFetch";
 const SubLightsList = (props: any) => {
   //props list  ==> list to be mapped
   // & setRefresh ==> returned random from server to rerender
   // & value ==> {show or setting} switch between setting and normal lightList
+  // & item ==> title and checkbox of settings
 
   const history = useHistory();
 
@@ -32,6 +34,8 @@ const SubLightsList = (props: any) => {
     } else if (props.value === "settings") {
       return (
         <>
+        <HandleSubListFetch item={props.item} />
+        <br></br>
           {props.list.map((listItem: any) => {
             console.log("sublist data");
             console.log(props.list)
@@ -46,6 +50,8 @@ const SubLightsList = (props: any) => {
               </>
             );
           })}
+          
+            
         </>
       );
     }

@@ -70,7 +70,7 @@ const SubLightsSettingsView = (props: any) => {
                     Set
                   </IonButton>
                 </IonItem>
-                <IonItem lines="full" onClick={() => handleCheckBox(settingsList.enable)}>
+                <IonItem lines="full" button onClick={() => handleCheckBox(settingsList.enable)}>
                   <IonLabel>Enable or Disable View</IonLabel>
                   <IonCheckbox
                     color="success"

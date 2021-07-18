@@ -39,6 +39,7 @@ const SubLights = () => {
               list={subLightList}
               setRefresh={setRefresh}
               value={value}
+              item={item}
             />
           )}
         </IonContent>

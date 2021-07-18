@@ -1,6 +1,7 @@
-import { IonLabel } from "@ionic/react";
+import { IonLabel ,IonItem} from "@ionic/react";
 import { useHistory } from "react-router";
 import "./LightsList.css";
+
 const LightsList = (props: any) => {
   //props list ==> list to be maped
   // & value ==> {show or setting} switch between setting and normal lightList
